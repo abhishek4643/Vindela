@@ -16,9 +16,20 @@ export default function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isDark) document.documentElement.classList.add('dark');
-    else document.documentElement.classList.remove('dark');
-  }, [isDark]);
+    if (document.documentElement.classList.contains('dark')) setIsDark(true);
+  }, []);
+
+  const toggleDark = () => {
+    const newIsDark = !isDark;
+    setIsDark(newIsDark);
+    if (newIsDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('vindela-theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('vindela-theme', 'light');
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,53 +45,68 @@ export default function Login() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', position: 'relative' }}>
-      {/* Top Right Controls */}
-      <div style={{ position: 'absolute', top: 24, right: 24, display: 'flex', alignItems: 'center', gap: 12, background: isDark ? '#1A1918' : '#fff', padding: '8px 16px', borderRadius: 100, boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
-        {MAT('dark_mode', 0, 16, isDark ? '#F8F6F0' : '#816B1F')}
-        <div className="toggle-bg" onClick={() => setIsDark(!isDark)}>
-          <div className="toggle-dot"></div>
+    <div style={{ minHeight: '100vh', display: 'flex', flexWrap: 'wrap', position: 'relative' }}>
+      {/* Left Side: Cinematic Image */}
+      <div style={{ flex: '1 1 500px', position: 'relative', minHeight: '30vh' }}>
+        <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=80" alt="Fine Dining" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(15,15,15,0.9) 0%, rgba(20,20,20,0.4) 100%)' }}></div>
+        <div style={{ position: 'absolute', bottom: 64, left: 64, right: 64, zIndex: 1 }}>
+           <h2 className="serif-heading" style={{ fontSize: 48, fontWeight: 800, color: '#d4af37', marginBottom: 16, lineHeight: 1.1 }}>A taste of luxury,<br/><span style={{color: '#fff'}}>an unforgettable evening.</span></h2>
+           <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.7)', maxWidth: 400 }}>Experience culinary perfection at Vindela. Reserve your table and step into a world of exquisite flavors.</p>
         </div>
-        <span style={{ fontSize: 13, fontWeight: 500, color: isDark ? '#F8F6F0' : '#7A7873' }}>Dark Mode</span>
       </div>
 
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
-        {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: 40 }}>
-          <div style={{ color: '#816B1F', marginBottom: 12 }}>
-            {MAT('diamond', 0, 42)}
-          </div>
-          <h1 className="serif-heading" style={{ fontSize: 42, fontWeight: 600, color: '#816B1F', marginBottom: 12 }}>Vindela</h1>
-          <div style={{ fontSize: 11, fontWeight: 600, color: isDark ? '#A09D96' : '#7A7873', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
-            Fine Dining Reservation System
+      {/* Right Side: Form */}
+      <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', position: 'relative', background: 'var(--color-surface)', borderLeft: '1px solid rgba(129, 107, 31, 0.1)' }}>
+        {/* Theme Toggle */}
+        <div style={{ position: 'absolute', top: 32, right: 32, display: 'flex', alignItems: 'center', gap: 12, background: 'var(--color-background)', padding: '8px 16px', borderRadius: 100, border: '1px solid rgba(129,107,31,0.1)', zIndex: 10 }}>
+          {MAT('dark_mode', 0, 16, 'var(--color-primary)')}
+          <div className="toggle-bg" onClick={toggleDark}>
+            <div className="toggle-dot"></div>
           </div>
         </div>
 
-        {/* Card */}
-        <div className="v-card" style={{ width: '100%', maxWidth: 440 }}>
-          <h2 className="serif-heading" style={{ fontSize: 28, fontWeight: 500, marginBottom: 8, color: isDark ? '#F8F6F0' : '#1B1A17' }}>Welcome back</h2>
-          <p style={{ color: isDark ? '#A09D96' : '#7A7873', fontSize: 14, marginBottom: 32 }}>Sign in to access your reservations</p>
-
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            <div>
-              <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: isDark ? '#A09D96' : '#7A7873', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Email Address</label>
-              <input type="email" className="v-input" style={{ backgroundColor: isDark ? '#242220' : '#EBF3FC' }}
-                value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
-            </div>
-            <div>
-              <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: isDark ? '#A09D96' : '#7A7873', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Password</label>
-              <div style={{ position: 'relative' }}>
-                <input type={showPassword ? 'text' : 'password'} className="v-input" style={{ backgroundColor: isDark ? '#242220' : '#F0EDE1', paddingRight: 40 }}
-                  value={form.password} onChange={e => setForm({ ...form, password: e.target.value })} />
-                <button type="button" onClick={() => setShowPassword(!showPassword)} style={{ position: 'absolute', right: 12, top: 12, background: 'none', border: 'none', cursor: 'pointer', color: '#7A7873' }}>
-                  {MAT(showPassword ? 'visibility_off' : 'visibility', 0, 18)}
-                </button>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '64px 24px' }}>
+          <div style={{ width: '100%', maxWidth: 420 }}>
+            {/* Logo */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 56 }}>
+              <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'linear-gradient(135deg, #d4af37, #8a6c1c)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', boxShadow: '0 10px 20px rgba(212,175,55,0.3)' }}>
+                {MAT('restaurant_menu', 0, 28, '#fff')}
               </div>
+              <h1 className="serif-heading" style={{ fontSize: 40, fontWeight: 800, color: 'var(--color-text-main)', margin: 0, letterSpacing: '-0.02em' }}>Vindela</h1>
             </div>
-            <button type="submit" className="btn-primary" disabled={loading} style={{ marginTop: 8 }}>
-              {loading ? 'Signing In...' : 'Sign In'} {MAT('arrow_forward', 0, 18)}
-            </button>
-          </form>
+
+            <h2 className="serif-heading" style={{ fontSize: 36, fontWeight: 800, marginBottom: 8, color: 'var(--color-text-main)' }}>Welcome Back</h2>
+            <p style={{ color: 'var(--color-text-muted)', fontSize: 16, marginBottom: 48 }}>Sign in to manage your luxury dining experiences.</p>
+
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+              <div>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 700, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>Email Address</label>
+                <input type="email" className="form-input" style={{ padding: '16px 20px', fontSize: 16, borderRadius: 12, background: 'var(--color-background)' }}
+                  value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} placeholder="Enter your email" />
+              </div>
+              <div>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 700, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>Password</label>
+                <div style={{ position: 'relative' }}>
+                  <input type={showPassword ? 'text' : 'password'} className="form-input" style={{ padding: '16px 20px', fontSize: 16, borderRadius: 12, background: 'var(--color-background)', paddingRight: 48 }}
+                    value={form.password} onChange={e => setForm({ ...form, password: e.target.value })} placeholder="Enter your password" />
+                  <button type="button" onClick={() => setShowPassword(!showPassword)} style={{ position: 'absolute', right: 16, top: 16, background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-muted)' }}>
+                    {MAT(showPassword ? 'visibility_off' : 'visibility', 0, 20)}
+                  </button>
+                </div>
+              </div>
+              <button type="submit" className="btn" disabled={loading} style={{ marginTop: 16, padding: '16px', borderRadius: 12, fontSize: 16, fontWeight: 700, width: '100%', display: 'flex', justifyContent: 'center', gap: 12, background: '#d4af37', color: '#000', border: 'none', cursor: 'pointer', boxShadow: '0 10px 20px rgba(212,175,55,0.2)' }}>
+                {loading ? 'Signing In...' : 'Sign In'} {MAT('arrow_forward', 0, 20, '#000')}
+              </button>
+            </form>
+
+            <div style={{ textAlign: 'center', marginTop: 40 }}>
+              <span style={{ color: 'var(--color-text-muted)', fontSize: 15 }}>New to Vindela? </span>
+              <Link to="/register" style={{ fontSize: 15, color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 700 }}>
+                Create an account
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

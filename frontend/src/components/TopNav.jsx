@@ -17,9 +17,15 @@ export default function TopNav() {
   }, []);
 
   const toggleDark = () => {
-    setIsDark(!isDark);
-    if (!isDark) document.documentElement.classList.add('dark');
-    else document.documentElement.classList.remove('dark');
+    const newIsDark = !isDark;
+    setIsDark(newIsDark);
+    if (newIsDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('vindela-theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('vindela-theme', 'light');
+    }
   };
 
   const handleLogout = () => { logout(); navigate('/login'); };
@@ -39,7 +45,7 @@ export default function TopNav() {
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--color-primary)' }}>
-            {MAT('diamond', 0, 24)}
+            {MAT('set_meal', 0, 24)}
             <span className="serif-heading" style={{ fontSize: 24, fontWeight: 600 }}>Vindela</span>
           </div>
           

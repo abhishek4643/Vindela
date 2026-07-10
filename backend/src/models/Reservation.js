@@ -8,6 +8,7 @@ const VALID_TIME_SLOTS = [
 const reservationSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   table: { type: mongoose.Schema.Types.ObjectId, ref: 'Table', required: true },
+  restaurantName: { type: String, required: true, default: 'Vindela Signature' },
   date: { type: String, required: true },
   timeSlot: { type: String, enum: VALID_TIME_SLOTS, required: true },
   partySize: { type: Number, required: true },
@@ -16,11 +17,10 @@ const reservationSchema = new mongoose.Schema({
   confirmationCode: { type: String, unique: true }
 }, { timestamps: true });
 
-reservationSchema.pre('save', function(next) {
+reservationSchema.pre('save', function() {
   if (!this.confirmationCode) {
     this.confirmationCode = Math.random().toString(36).substring(2, 8).toUpperCase();
   }
-  next();
 });
 
 module.exports = mongoose.model('Reservation', reservationSchema);

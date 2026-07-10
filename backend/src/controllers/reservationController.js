@@ -25,7 +25,7 @@ const getMyReservations = asyncHandler(async (req, res) => {
 });
 
 const createReservation = asyncHandler(async (req, res) => {
-  const { tableId, date, timeSlot, partySize, specialRequests } = req.body;
+  const { tableId, date, timeSlot, partySize, specialRequests, restaurantName } = req.body;
   const table = await Table.findById(tableId);
   if (!table || !table.isActive) { res.status(400); throw new Error('Table not available'); }
   if (partySize > table.capacity) { res.status(400); throw new Error('Party size exceeds table capacity'); }
@@ -34,7 +34,8 @@ const createReservation = asyncHandler(async (req, res) => {
   if (!available) { res.status(400); throw new Error('Table is already booked for this time slot'); }
   
   const reservation = await Reservation.create({
-    user: req.user.id, table: tableId, date, timeSlot, partySize, specialRequests
+    user: req.user.id, table: tableId, date, timeSlot, partySize, specialRequests,
+    restaurantName: restaurantName || 'Vindela Signature'
   });
   
   const populated = await Reservation.findById(reservation._id).populate('table');

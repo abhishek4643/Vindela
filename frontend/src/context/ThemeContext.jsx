@@ -1,0 +1,2 @@
+"import { createContext, useContext, useState, useEffect } from 'react';\n\nconst ThemeContext = createContext(null);\n\nexport const ThemeProvider = ({ children }) => {\n  const [theme, setTheme] = useState(() => localStorage.getItem('vindela-theme') || '
+<truncated 451 bytes>

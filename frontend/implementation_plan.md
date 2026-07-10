@@ -1,0 +1,2 @@
+"# Overhaul Frontend UI with Tailwind Design System\n\nThe objective is to migrate the current custom CSS frontend design to the new Tailwind CSS-based design system provided in the HTML template. This involves transitioning from a bespoke CSS variable sys
+<truncated 3835 bytes>

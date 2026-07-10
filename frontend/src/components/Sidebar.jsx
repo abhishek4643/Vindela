@@ -1,0 +1,2 @@
+"import { NavLink, useNavigate } from 'react-router-dom';\nimport { useAuth } from '../context/AuthContext';\nimport { useTheme } from '../context/ThemeContext';\nimport { LayoutDashboard, CalendarPlus, Calendar, TableProperties, LogOut, BarChart3, Gem, Su
+<truncated 2800 bytes>

@@ -30,16 +30,24 @@ const seedData = async () => {
     await Table.insertMany(tables);
     console.log('Tables seeded successfully');
 
-    // Add default admin user if none exists
-    const adminExists = await User.findOne({ email: 'admin@luxereserve.com' });
-    if (!adminExists) {
+    // Add default admin user if none exists, or update the existing one
+    const adminEmail = 'admin@restaurant.com';
+    let adminUser = await User.findOne({ email: adminEmail });
+    
+    if (!adminUser) {
+      // Create new admin
       await User.create({
         name: 'System Admin',
-        email: 'admin@luxereserve.com',
-        password: 'password123',
+        email: adminEmail,
+        password: 'admin@123',
         role: 'admin'
       });
-      console.log('Admin user created (admin@luxereserve.com / password123)');
+      console.log('Admin user created (admin@restaurant.com / admin@123)');
+    } else {
+      // Update existing admin
+      adminUser.password = 'admin@123';
+      await adminUser.save();
+      console.log('Admin user password updated (admin@restaurant.com / admin@123)');
     }
 
     process.exit();

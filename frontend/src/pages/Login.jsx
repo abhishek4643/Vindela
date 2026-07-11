@@ -70,10 +70,11 @@ export default function Login() {
           <div style={{ width: '100%', maxWidth: 420 }}>
             {/* Logo */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 56 }}>
-              <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'linear-gradient(135deg, #d4af37, #8a6c1c)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', boxShadow: '0 10px 20px rgba(212,175,55,0.3)' }}>
-                {MAT('restaurant_menu', 0, 28, '#fff')}
+              <div style={{ width: 2, height: 40, background: 'var(--color-primary)' }}></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                {MAT('restaurant', 1, 36, '#fff')}
+                <h1 className="serif-heading" style={{ fontSize: 40, fontWeight: 800, color: 'var(--color-primary)', margin: 0, letterSpacing: '-0.02em', lineHeight: 1 }}>Vindela</h1>
               </div>
-              <h1 className="serif-heading" style={{ fontSize: 40, fontWeight: 800, color: 'var(--color-text-main)', margin: 0, letterSpacing: '-0.02em' }}>Vindela</h1>
             </div>
 
             <h2 className="serif-heading" style={{ fontSize: 36, fontWeight: 800, marginBottom: 8, color: 'var(--color-text-main)' }}>Welcome Back</h2>

@@ -5,27 +5,25 @@ import api from '../api/axios';
 import toast from 'react-hot-toast';
 
 const RESTAURANTS = [
-  { id: 'r1', name: 'Abhiruchi', image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80', desc: 'Authentic Indian flavors and traditional spices in a warm setting.' },
-  { id: 'r2', name: 'Mehfil', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80', desc: 'Premium Mughlai cuisine and royal biryanis for the perfect feast.' },
-  { id: 'r3', name: 'Vindela Signature', image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80', desc: 'Our flagship global fusion dining experience.' }
+  { id: 'r1', name: 'Bawarchi', image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80', desc: 'Legendary biryani and authentic Hyderabadi flavors.' },
+  { id: 'r2', name: 'Paradise', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80', desc: 'World-famous biryani and royal Mughlai cuisine.' },
+  { id: 'r3', name: 'Platform65', image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80', desc: 'Unique train-themed dining with diverse Indian cuisine.' },
+  { id: 'r4', name: 'Kritunga', image: 'https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?auto=format&fit=crop&w=800&q=80', desc: 'Spicy, traditional Andhra and Rayalaseema delicacies.' },
+  { id: 'r5', name: 'Devaraya', image: 'https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=800&q=80', desc: 'Grand dining featuring heritage recipes and regal ambiance.' },
+  { id: 'r6', name: 'Viyyalavari Kitchen', image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80', desc: 'Authentic Telugu cuisine with traditional homely flavors.' }
 ];
 
 const EXPERIENCES = [
-  { id: 'v1', name: 'Family Gathering', desc: 'Spacious seating for the whole family.', location: 'indoor', image: 'https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=800&q=80' },
-  { id: 'v2', name: 'Romantic Anniversary', desc: 'Intimate, candlelit setting perfect for two.', location: 'private', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80' },
-  { id: 'v3', name: 'Friends Night Out', desc: 'Vibrant atmosphere for drinks and sharing.', location: 'bar', image: 'https://images.unsplash.com/photo-1529543544282-ea56f55cb5a5?auto=format&fit=crop&w=800&q=80' },
-  { id: 'v4', name: 'Business Lunch', desc: 'Quiet, professional environment for meetings.', location: 'indoor', image: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80' },
-  { id: 'v5', name: 'Sunday Brunch', desc: 'Bask in the sun with fresh pastries.', location: 'outdoor', image: 'https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?auto=format&fit=crop&w=800&q=80' },
-  { id: 'v6', name: 'Birthday Celebration', desc: 'Festive and lively setup for your special day.', location: 'indoor', image: 'https://images.unsplash.com/photo-1530103862676-de8892b07439?auto=format&fit=crop&w=800&q=80' },
-  { id: 'v7', name: 'The Onyx Bar', desc: 'Exclusive cocktails and high seating.', location: 'bar', image: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80' },
-  { id: 'v8', name: 'Sunset Dining', desc: 'Enjoy the golden hour on the terrace.', location: 'outdoor', image: 'https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=800&q=80' },
-  { id: 'v9', name: 'The Grand Hall', desc: 'Our signature dining with opulent decor.', location: 'indoor', image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80' },
-  { id: 'v10', name: 'Chef\'s Tasting', desc: 'A culinary journey near the open kitchen.', location: 'indoor', image: 'https://images.unsplash.com/photo-1505826759037-406b40feb4cd?auto=format&fit=crop&w=800&q=80' },
-  { id: 'v11', name: 'Late Night Lounge', desc: 'Relaxed vibes with premium spirits.', location: 'bar', image: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=800&q=80' },
-  { id: 'v12', name: 'Executive Retreat', desc: 'Absolute privacy for VIP guests.', location: 'private', image: 'https://images.unsplash.com/photo-1560624052-449f5ddf0c31?auto=format&fit=crop&w=800&q=80' }
+  { id: 'v1', name: 'Family Gathering', desc: 'Spacious seating for the whole family.', location: 'family', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80' },
+  { id: 'v2', name: 'Friends Night Out', desc: 'Vibrant atmosphere for drinks and sharing.', location: 'friends', image: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=800&q=80' },
+  { id: 'v3', name: 'Bar Dining', desc: 'Exclusive cocktails and high seating.', location: 'bar', image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80' },
+  { id: 'v4', name: 'Business Lunch', desc: 'Quiet, professional environment for meetings.', location: 'business', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80' },
+  { id: 'v5', name: 'Sunday Brunch', desc: 'Bask in the sun with fresh pastries.', location: 'brunch', image: 'https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=800&q=80' },
+  { id: 'v6', name: 'Birthday Celebration', desc: 'Festive and lively setup for your special day.', location: 'birthday', image: 'https://images.unsplash.com/photo-1560624052-449f5ddf0c31?auto=format&fit=crop&w=800&q=80' },
+  { id: 'v7', name: 'Sunset Dining', desc: 'Enjoy the golden hour on the terrace.', location: 'sunset', image: 'https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=800&q=80' }
 ];
 
-const LOC_LABELS = { indoor: 'Indoor', outdoor: 'Outdoor', bar: 'Bar', private: 'Private' };
+const LOC_LABELS = { family: 'Family', friends: 'Friends', bar: 'Bar', business: 'Business', brunch: 'Brunch', birthday: 'Birthday', sunset: 'Sunset' };
 const MAT = (name, fill = 0, size = 20, color = 'inherit') => (
   <span className="material-symbols-outlined" style={{ fontVariationSettings: `'FILL' ${fill}`, fontSize: size, color }}>{name}</span>
 );
@@ -155,12 +153,13 @@ export default function NewReservation() {
             </div>
 
             <div style={{ 
-              display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 20, padding: '10px 0 60px 0'
+              display: 'flex', flexWrap: 'wrap', gap: 24, padding: '10px 0 60px 0'
             }}>
               {EXPERIENCES.map(exp => (
                 <div key={exp.id} className="exp-card"
                   style={{ 
-                    height: 260, borderRadius: 20, overflow: 'hidden', position: 'relative', cursor: 'pointer',
+                    flex: '1 1 300px',
+                    height: 320, borderRadius: 24, overflow: 'hidden', position: 'relative', cursor: 'pointer',
                     boxShadow: '0 10px 30px -10px rgba(0,0,0,0.15)',
                     transform: hoveredExp && hoveredExp !== exp.id ? 'scale(0.97)' : 'scale(1)',
                     opacity: hoveredExp && hoveredExp !== exp.id ? 0.7 : 1,
@@ -170,29 +169,33 @@ export default function NewReservation() {
                   onMouseLeave={() => setHoveredExp(null)}
                   onClick={() => { setSelectedExp(exp); setStep(2); window.scrollTo({top: 0, behavior: 'smooth'}); }}
                 >
-                  <div style={{ position: 'absolute', top: 12, right: 12, background: 'rgba(0,0,0,0.6)', color: '#fff', padding: '4px 10px', borderRadius: 16, fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', backdropFilter: 'blur(4px)', zIndex: 2 }}>
+                  <div style={{ position: 'absolute', top: 16, right: 16, background: 'rgba(0,0,0,0.6)', color: '#fff', padding: '6px 14px', borderRadius: 100, fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', backdropFilter: 'blur(8px)', zIndex: 2 }}>
                     {LOC_LABELS[exp.location]}
                   </div>
 
                   <img src={exp.image} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt={exp.name} onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80'; }} />
                   
-                  {/* Floating Glass Panel */}
+                  {/* Premium Full Gradient Overlay */}
                   <div style={{ 
-                    position: 'absolute', bottom: 12, left: 12, right: 12, 
-                    background: 'rgba(20, 20, 20, 0.65)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)',
-                    borderRadius: 16, padding: 16, color: 'white', border: '1px solid rgba(255,255,255,0.1)',
-                    display: 'flex', flexDirection: 'column', gap: 6
+                    position: 'absolute', inset: 0, 
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%)',
+                    pointerEvents: 'none'
+                  }}></div>
+
+                  <div style={{ 
+                    position: 'absolute', bottom: 24, left: 24, right: 24, 
+                    color: 'white', display: 'flex', flexDirection: 'column', gap: 8
                   }}>
-                    <h3 className="serif-heading" style={{ fontSize: 20, margin: 0, textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>{exp.name}</h3>
-                    <p style={{ opacity: 0.8, fontSize: 13, lineHeight: 1.4, margin: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                    <h3 className="serif-heading" style={{ fontSize: 26, margin: 0, textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>{exp.name}</h3>
+                    <p style={{ opacity: 0.85, fontSize: 14, lineHeight: 1.5, margin: 0 }}>
                       {exp.desc}
                     </p>
-                    <div style={{ marginTop: 8 }}>
+                    <div style={{ marginTop: 12 }}>
                       <div className="exp-select-btn" style={{ 
-                        display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 700, 
-                        color: 'var(--color-primary)', background: '#ffffff', padding: '8px 16px', borderRadius: 100 
+                        display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 13, fontWeight: 700, 
+                        color: 'var(--color-primary)', background: '#ffffff', padding: '10px 24px', borderRadius: 100 
                       }}>
-                        Select {MAT('arrow_forward', 0, 16)}
+                        Select {MAT('arrow_forward', 0, 18)}
                       </div>
                     </div>
                   </div>
@@ -248,7 +251,7 @@ export default function NewReservation() {
           </div>
         )}
 
-        {step === 2 && (
+        {step === 3 && (
           <div style={{ animation: 'fade-in 0.4s ease-out', maxWidth: 900, margin: '0 auto' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingBottom: 24, borderBottom: '1px solid rgba(129, 107, 31, 0.1)', marginBottom: 32, flexWrap: 'wrap', gap: 16 }}>
               <div>
@@ -257,7 +260,7 @@ export default function NewReservation() {
                   {MAT('event', 0, 16)} {new Date(date).toLocaleDateString()} &nbsp;·&nbsp; {MAT('group', 0, 16)} {partySize} Guests &nbsp;·&nbsp; {selectedExp?.name}
                 </div>
               </div>
-              <button className="btn btn-soft btn-sm" style={{ borderRadius: 100, padding: '8px 16px' }} onClick={() => setStep(1)}>{MAT('edit', 0, 16)} Modify</button>
+              <button className="btn btn-soft btn-sm" style={{ borderRadius: 100, padding: '8px 16px' }} onClick={() => setStep(2)}>{MAT('edit', 0, 16)} Modify</button>
             </div>
 
             <div style={{ display: 'flex', gap: 12, marginBottom: 24, overflowX: 'auto', paddingBottom: 8 }} className="hide-scroll">
@@ -286,12 +289,13 @@ export default function NewReservation() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                 {availableTables.filter(t => selectedAreaFilter === 'all' || t.location === selectedAreaFilter).map(table => {
                   const isBooked = table.isFullyBooked;
+                  const isTooSmall = table.capacity < partySize;
                   return (
                     <div key={table._id} style={{ 
                       background: 'var(--color-surface)', borderRadius: 24, padding: '24px 32px', 
                       border: selectedTable?._id === table._id ? '2px solid var(--color-primary)' : '1px solid rgba(129, 107, 31, 0.1)',
                       display: 'flex', flexDirection: 'column', gap: 20,
-                      opacity: isBooked ? 0.6 : 1, transition: 'all 0.3s'
+                      opacity: (isBooked || isTooSmall) ? 0.6 : 1, transition: 'all 0.3s'
                     }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
@@ -303,10 +307,14 @@ export default function NewReservation() {
                             <div style={{ fontSize: 14, color: 'var(--color-text-muted)', marginTop: 2 }}>Up to {table.capacity} guests · {LOC_LABELS[table.location]}</div>
                           </div>
                         </div>
-                        {isBooked && <span style={{ background: '#f8ecec', color: '#ba1a1a', padding: '6px 16px', borderRadius: 100, fontSize: 12, fontWeight: 700 }}>Fully Booked</span>}
+                        {isTooSmall ? (
+                          <span style={{ background: '#f8ecec', color: '#ba1a1a', padding: '6px 16px', borderRadius: 100, fontSize: 12, fontWeight: 700 }}>Too Small ({table.capacity} max)</span>
+                        ) : isBooked ? (
+                          <span style={{ background: '#f8ecec', color: '#ba1a1a', padding: '6px 16px', borderRadius: 100, fontSize: 12, fontWeight: 700 }}>Fully Booked</span>
+                        ) : null}
                       </div>
 
-                      {!isBooked && (
+                      {(!isBooked && !isTooSmall) && (
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, paddingTop: 16, borderTop: '1px solid rgba(129, 107, 31, 0.05)' }}>
                           {['11:00-13:00', '13:00-15:00', '15:00-17:00', '17:00-19:00', '19:00-21:00', '21:00-23:00'].map(slot => {
                             const isAvailable = table.availableSlots.includes(slot);

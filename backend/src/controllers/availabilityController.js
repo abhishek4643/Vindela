@@ -7,7 +7,7 @@ const getAvailability = asyncHandler(async (req, res) => {
   if (!date) { res.status(400); throw new Error('Date is required'); }
   
   const guestCount = guests ? parseInt(guests) : 1;
-  const tables = await Table.find({ isActive: true, capacity: { $gte: guestCount } });
+  const tables = await Table.find({ isActive: true });
   
   const availableTables = await getAvailableTablesForDate(date, tables);
   res.json({ success: true, date, tables: availableTables });

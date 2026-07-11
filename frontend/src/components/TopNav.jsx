@@ -44,9 +44,12 @@ export default function TopNav() {
     <nav style={{ position: 'sticky', top: 0, zIndex: 50, background: 'var(--color-surface)', boxShadow: '0 4px 20px rgba(0,0,0,0.03)', transition: 'background-color 0.3s' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--color-primary)' }}>
-            {MAT('set_meal', 0, 24)}
-            <span className="serif-heading" style={{ fontSize: 24, fontWeight: 600 }}>Vindela</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div style={{ width: 2, height: 28, background: 'var(--color-primary)' }}></div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--color-primary)' }}>
+              {MAT('restaurant', 1, 28, '#fff')}
+              <span className="serif-heading" style={{ fontSize: 28, fontWeight: 800, lineHeight: 1 }}>Vindela</span>
+            </div>
           </div>
           
           <div style={{ display: 'flex', gap: 16 }}>

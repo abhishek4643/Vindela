@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🥗 Vindela
+# Vindela
 
 ### **Full-Stack Vegetarian Food Delivery Platform**
 
@@ -14,7 +14,7 @@ _Connecting health-conscious consumers with pure vegetarian cuisine_
 
 ---
 
-## 📌 About
+## About
 
 **Vindela** is a full-stack food delivery platform built specifically for vegetarian cuisine. It provides a seamless ordering experience with real-time menu browsing, cart management, secure checkout, and order tracking — all backed by a robust backend with Supabase.
 
@@ -22,21 +22,21 @@ _Connecting health-conscious consumers with pure vegetarian cuisine_
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 | Feature | Description |
 |---------|-------------|
-| 🍽️ **Dynamic Menu** | Browse categorized vegetarian dishes with rich descriptions |
-| 🛒 **Smart Cart** | Add, remove, and modify items with real-time price calculation |
-| 🔐 **User Authentication** | Secure sign-up/login with session management |
-| 📦 **Order Management** | Place orders, track status, and view order history |
-| 💳 **Checkout Flow** | Streamlined multi-step checkout process |
-| 📱 **Responsive Design** | Optimized for all screen sizes |
-| ⚡ **Real-Time Updates** | Supabase Realtime for instant data sync |
+| **Dynamic Menu** | Browse categorized vegetarian dishes with rich descriptions |
+| **Smart Cart** | Add, remove, and modify items with real-time price calculation |
+| **User Authentication** | Secure sign-up/login with session management |
+| **Order Management** | Place orders, track status, and view order history |
+| **Checkout Flow** | Streamlined multi-step checkout process |
+| **Responsive Design** | Optimized for all screen sizes |
+| **Real-Time Updates** | Supabase Realtime for instant data sync |
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ```
 Frontend:       JavaScript · HTML5 · CSS3 · React
@@ -49,7 +49,7 @@ Deployment:     Vercel / Netlify
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ```bash
 # Clone the repository
@@ -69,7 +69,7 @@ npm run dev
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Vindela/
@@ -88,7 +88,7 @@ Vindela/
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] Payment gateway integration (Razorpay/Stripe)
 - [ ] Push notifications for order updates
@@ -100,6 +100,6 @@ Vindela/
 
 <div align="center">
 
-_Delivering pure vegetarian goodness, one order at a time_ 🌿
+_Delivering pure vegetarian goodness, one order at a time_
 
 </div>

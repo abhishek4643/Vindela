@@ -1,71 +1,88 @@
-<div align="center">
-
 # Vindela
 
-### **Full-Stack Vegetarian Food Delivery Platform**
+A full-stack culinary commerce and order management platform dedicated to pure vegetarian cuisine, featuring real-time catalog navigation, resilient cart synchronization, and an administrative order orchestration pipeline.
 
-_Connecting health-conscious consumers with pure vegetarian cuisine_
-
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
-
-</div>
+[![Frontend](https://img.shields.io/badge/Frontend-React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Backend](https://img.shields.io/badge/Backend-Express_5-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![Database](https://img.shields.io/badge/Database-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Tooling](https://img.shields.io/badge/Build-Vite_8-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Styling](https://img.shields.io/badge/Tailwind-v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
 ---
 
-## About
+## Project Overview
 
-**Vindela** is a full-stack food delivery platform built specifically for vegetarian cuisine. It provides a seamless ordering experience with real-time menu browsing, cart management, secure checkout, and order tracking — all backed by a robust backend with Supabase.
+Vindela bridges the gap between discerning vegetarian consumers and verified vegetarian culinary kitchens. Built with a decoupled MERN architecture (React 19, Vite 8, Express 5, and MongoDB Mongoose 9), the system provides transparent ingredient sourcing, dietary tags (vegan, Jain, gluten-free), and real-time order lifecycle tracking.
 
-> _"Vindela" — inspired by the concept of a pure, wholesome journey through food._
+**Vision:** Provide an uncompromising, delightful dining platform that guarantees 100% vegetarian integrity with modern digital commerce convenience.
 
 ---
 
 ## Key Features
 
-| Feature | Description |
-|---------|-------------|
-| **Dynamic Menu** | Browse categorized vegetarian dishes with rich descriptions |
-| **Smart Cart** | Add, remove, and modify items with real-time price calculation |
-| **User Authentication** | Secure sign-up/login with session management |
-| **Order Management** | Place orders, track status, and view order history |
-| **Checkout Flow** | Streamlined multi-step checkout process |
-| **Responsive Design** | Optimized for all screen sizes |
-| **Real-Time Updates** | Supabase Realtime for instant data sync |
+- **Specialized Vegetarian Taxonomy:** Filtering by strict culinary preferences including vegan, gluten-free, organic, and Jain preparations.
+- **Resilient Shopping Cart:** Client-persisted cart state with automatic stock validation and price verification upon checkout.
+- **Secure Authentication Pipeline:** JSON Web Token (JWT) session authorization with bcrypt password encryption and protected route middleware.
+- **Order Orchestration Workflow:** End-to-end order processing status transitions: Placed -> Confirmed -> Preparing -> Out for Delivery -> Completed.
+- **Automated Catalog Seeding:** Integrated seed scripts for generating realistic menu structures, pricing, and category hierarchies.
+- **Ultra-Fast Frontend:** Built with React 19 and Vite 8, offering instantaneous route navigation via React Router 7.
 
 ---
 
-## Tech Stack
+## Use Cases
+
+### For Consumers & Diners
+- Explore categorized vegetarian cuisines with detailed ingredient transparency.
+- Customize items, manage multiple delivery addresses, and track real-time order status.
+
+### For Restaurant Kitchen Operators
+- Monitor live orders on an administrative dashboard with one-click status updates.
+- Toggle item availability and adjust pricing in real-time.
+
+### For Developers & System Architects
+- Reference pattern for structuring an Express 5 REST API with Mongoose 9 schemas.
+- Clean separation of concerns between authentication, business controllers, and data access objects.
+
+---
+
+## System Architecture
 
 ```
-Frontend:       JavaScript · HTML5 · CSS3 · React
-Backend:        Node.js · Express.js
-Database:       Supabase (PostgreSQL)
-Authentication: Supabase Auth
-State Mgmt:     React Context / Redux
-Deployment:     Vercel / Netlify
++---------------------------------------------------------------+
+|              Frontend Client (React 19 + Vite 8)              |
+|  - React Router 7 Navigation     - Tailwind CSS v4 Theme      |
+|  - Persistent Cart Store         - Toast Notifications        |
++---------------------------------------------------------------+
+                                |  REST API (Axios / JSON)
+                                v
++---------------------------------------------------------------+
+|               Backend Server (Node.js + Express 5)            |
+|  - JWT Auth Middleware           - Express Validator          |
+|  - Order Management Service      - Product Routing Engine     |
++---------------------------------------------------------------+
+                                |  Mongoose 9 ODM
+                                v
++---------------------------------------------------------------+
+|                     MongoDB Document Store                    |
+|  - Users & Roles                 - Products & Categories      |
+|  - Order Records                 - Delivery Details           |
++---------------------------------------------------------------+
 ```
 
 ---
 
-## Getting Started
+## Technology Stack
 
-```bash
-# Clone the repository
-git clone https://github.com/abhishek4643/Vindela.git
-cd Vindela
-
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env
-# Add your Supabase URL and anon key
-
-# Start development server
-npm run dev
-```
+| Layer | Technologies |
+|---|---|
+| Frontend Framework | React 19.2, React DOM 19.2 |
+| Build Tool | Vite 8, @vitejs/plugin-react |
+| Routing & State | React Router 7, React Context |
+| Styling | Tailwind CSS v4, Lucide React, React Hot Toast |
+| Backend Runtime | Node.js, Express 5.2 |
+| Database & ODM | MongoDB, Mongoose 9.7 |
+| Security & Auth | JSON Web Token (jsonwebtoken), bcryptjs |
+| HTTP & Utilities | Axios, date-fns, morgan, cors, dotenv |
 
 ---
 
@@ -73,33 +90,85 @@ npm run dev
 
 ```
 Vindela/
-├── client/              # Frontend React application
+├── frontend/             # React 19 client application
 │   ├── src/
-│   │   ├── components/  # Reusable UI components
-│   │   ├── pages/       # Route-based pages
-│   │   ├── services/    # API service layer
-│   │   └── utils/       # Helper functions
-├── server/              # Backend API
-│   ├── routes/          # Express route handlers
-│   ├── middleware/       # Auth & validation middleware
-│   └── config/          # Database & app configuration
-└── package.json
+│   │   ├── components/   # Navbar, CartDrawer, FoodCard, Footer
+│   │   ├── pages/        # Home, Menu, OrderTracking, Checkout, Login
+│   │   ├── context/      # AuthContext and CartContext providers
+│   │   └── App.jsx       # Root router configuration
+│   ├── package.json
+│   └── vite.config.js
+├── backend/              # Express 5 REST API
+│   ├── src/
+│   │   ├── controllers/  # authController, productController, orderController
+│   │   ├── models/       # User.js, Product.js, Order.js (Mongoose)
+│   │   ├── routes/       # authRoutes.js, productRoutes.js, orderRoutes.js
+│   │   ├── middleware/   # authMiddleware.js, errorHandler.js
+│   │   └── seed/         # seed.js (pre-populated vegetarian database)
+│   ├── server.js         # Server bootstrap and database connection
+│   └── package.json
+└── README.md
 ```
 
 ---
 
-## Roadmap
+## Getting Started
 
-- [ ] Payment gateway integration (Razorpay/Stripe)
-- [ ] Push notifications for order updates
-- [ ] Restaurant partner dashboard
-- [ ] Delivery partner tracking
-- [ ] Review and rating system
+### Prerequisites
+- Node.js >= 18.0.0
+- MongoDB instance (local or MongoDB Atlas connection URI)
+
+### Backend Setup
+
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   npm install
+   ```
+
+2. Create a `.env` file in `backend/`:
+   ```env
+   PORT=5000
+   MONGO_URI=mongodb://localhost:27017/vindela
+   JWT_SECRET=your_jwt_secret_key_here
+   ```
+
+3. Seed the database with menu items:
+   ```bash
+   npm run seed
+   ```
+
+4. Start the backend server:
+   ```bash
+   npm run dev
+   ```
+
+### Frontend Setup
+
+1. Open a new terminal and navigate to `frontend/`:
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+2. Launch the frontend development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Access the application in your browser at `http://localhost:5173`
 
 ---
 
-<div align="center">
+## Future Roadmap
 
-_Delivering pure vegetarian goodness, one order at a time_
+- Integration with payment gateways (Stripe / Razorpay).
+- Geolocation-based delivery tracking with live driver mapping.
+- Kitchen Display System (KDS) interface with audio order notifications.
+- Customer review and dietary rating system.
 
-</div>
+---
+
+## License
+
+This project is licensed under the ISC License.

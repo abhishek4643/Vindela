@@ -1,0 +1,71 @@
+<svg width="100%" height="100%" viewBox="0 0 960 130" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .card-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-anchor: middle; }
+      .card-desc { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 10.5px; font-weight: 400; fill: #94A3B8; text-anchor: middle; line-height: 1.4; }
+    </style>
+    <filter id="principle-shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <!-- Container Canvas -->
+  <rect width="960" height="130" rx="14" fill="#0B0F19" stroke="#1E293B" stroke-width="1" />
+
+  <!-- 1. User-Centered -->
+  <g transform="translate(24, 16)">
+    <rect width="213" height="98" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1" filter="url(#principle-shadow)" />
+    <!-- Users Icon -->
+    <g transform="translate(94, 12)" stroke="#818CF8" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </g>
+    <text x="106" y="58" class="card-title" fill="#818CF8">USER-CENTERED</text>
+    <text x="106" y="75" class="card-desc">Frictionless 3-step booking</text>
+    <text x="106" y="89" class="card-desc">with instant slot updates</text>
+  </g>
+
+  <!-- 2. Minimal & Clean -->
+  <g transform="translate(255, 16)">
+    <rect width="213" height="98" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1" filter="url(#principle-shadow)" />
+    <!-- Leaf / Minimal Icon -->
+    <g transform="translate(94, 12)" stroke="#34D399" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M11 20A7 7 0 0 1 4 13C4 7 11 3 20 3c0 9-4 16-10 17z" />
+      <path d="M4 21l7-7" />
+    </g>
+    <text x="106" y="58" class="card-title" fill="#34D399">MINIMAL &amp; CLEAN</text>
+    <text x="106" y="75" class="card-desc">Zero cluttered menus; focus</text>
+    <text x="106" y="89" class="card-desc">on dining time &amp; party size</text>
+  </g>
+
+  <!-- 3. Consistent -->
+  <g transform="translate(486, 16)">
+    <rect width="213" height="98" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1" filter="url(#principle-shadow)" />
+    <!-- Layers Icon -->
+    <g transform="translate(94, 12)" stroke="#EC4899" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 2 2 7 12 12 22 7 12 2" />
+      <polyline points="2 17 12 22 22 17" />
+      <polyline points="2 12 12 17 22 12" />
+    </g>
+    <text x="106" y="58" class="card-title" fill="#EC4899">CONSISTENT</text>
+    <text x="106" y="75" class="card-desc">Unified design across customer</text>
+    <text x="106" y="89" class="card-desc">booking &amp; admin dashboard</text>
+  </g>
+
+  <!-- 4. Accessible -->
+  <g transform="translate(717, 16)">
+    <rect width="219" height="98" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1" filter="url(#principle-shadow)" />
+    <!-- Accessibility Icon -->
+    <g transform="translate(97, 12)" stroke="#38BDF8" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="4" r="2" />
+      <path d="M4 9h16" />
+      <path d="M12 9v11" />
+      <path d="M8 20l4-7 4 7" />
+    </g>
+    <text x="109" y="58" class="card-title" fill="#38BDF8">ACCESSIBLE</text>
+    <text x="109" y="75" class="card-desc">Keyboard date-picker navigation</text>
+    <text x="109" y="89" class="card-desc">&amp; high-contrast badges</text>
+  </g>
+</svg>

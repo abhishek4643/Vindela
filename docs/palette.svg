@@ -1,0 +1,87 @@
+<svg width="100%" height="100%" viewBox="0 0 960 170" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .name { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 700; fill: #F0F6FC; text-anchor: middle; }
+      .hex { font-family: 'JetBrains Mono', SFMono-Regular, Consolas, monospace; font-size: 11px; font-weight: 500; fill: #94A3B8; text-anchor: middle; }
+      .desc { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 10px; font-weight: 400; fill: #64748B; text-anchor: middle; }
+    </style>
+    <filter id="swatch-shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <!-- Container Canvas -->
+  <rect width="960" height="170" rx="14" fill="#0B0F19" stroke="#1E293B" stroke-width="1" />
+
+  <!-- 1. Primary Blue -->
+  <g transform="translate(24, 20)">
+    <rect width="100" height="52" rx="8" fill="#536DFE" filter="url(#swatch-shadow)" />
+    <text x="50" y="82" class="name">Primary</text>
+    <text x="50" y="100" class="hex">#536DFE</text>
+    <text x="50" y="120" class="desc">Brand accent</text>
+    <text x="50" y="134" class="desc">/ reserve table</text>
+  </g>
+
+  <!-- 2. Secondary Purple -->
+  <g transform="translate(141, 20)">
+    <rect width="100" height="52" rx="8" fill="#8B5CF6" filter="url(#swatch-shadow)" />
+    <text x="50" y="82" class="name">Secondary</text>
+    <text x="50" y="100" class="hex">#8B5CF6</text>
+    <text x="50" y="120" class="desc">Admin portal</text>
+    <text x="50" y="134" class="desc">/ capacity badges</text>
+  </g>
+
+  <!-- 3. Success Green -->
+  <g transform="translate(258, 20)">
+    <rect width="100" height="52" rx="8" fill="#10B981" filter="url(#swatch-shadow)" />
+    <text x="50" y="82" class="name">Success</text>
+    <text x="50" y="100" class="hex">#10B981</text>
+    <text x="50" y="120" class="desc">Confirmed booking</text>
+    <text x="50" y="134" class="desc">/ table available</text>
+  </g>
+
+  <!-- 4. Warning Orange -->
+  <g transform="translate(375, 20)">
+    <rect width="100" height="52" rx="8" fill="#F59E0B" filter="url(#swatch-shadow)" />
+    <text x="50" y="82" class="name">Warning</text>
+    <text x="50" y="100" class="hex">#F59E0B</text>
+    <text x="50" y="120" class="desc">Pending status</text>
+    <text x="50" y="134" class="desc">/ slot filling fast</text>
+  </g>
+
+  <!-- 5. Error Red -->
+  <g transform="translate(492, 20)">
+    <rect width="100" height="52" rx="8" fill="#EF4444" filter="url(#swatch-shadow)" />
+    <text x="50" y="82" class="name">Error</text>
+    <text x="50" y="100" class="hex">#EF4444</text>
+    <text x="50" y="120" class="desc">Cancelled</text>
+    <text x="50" y="134" class="desc">/ table occupied</text>
+  </g>
+
+  <!-- 6. Background Light -->
+  <g transform="translate(609, 20)">
+    <rect width="100" height="52" rx="8" fill="#F7F8FC" stroke="#CBD5E1" stroke-width="1" filter="url(#swatch-shadow)" />
+    <text x="50" y="82" class="name">Background</text>
+    <text x="50" y="100" class="hex">#F7F8FC</text>
+    <text x="50" y="120" class="desc">Main dining UI</text>
+    <text x="50" y="134" class="desc">backdrop canvas</text>
+  </g>
+
+  <!-- 7. Surface White -->
+  <g transform="translate(726, 20)">
+    <rect width="100" height="52" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" filter="url(#swatch-shadow)" />
+    <text x="50" y="82" class="name">Surface</text>
+    <text x="50" y="100" class="hex">#FFFFFF</text>
+    <text x="50" y="120" class="desc">Booking cards,</text>
+    <text x="50" y="134" class="desc">table layout grid</text>
+  </g>
+
+  <!-- 8. Text Dark -->
+  <g transform="translate(843, 20)">
+    <rect width="93" height="52" rx="8" fill="#182033" stroke="#334155" stroke-width="1" filter="url(#swatch-shadow)" />
+    <text x="46" y="82" class="name">Text</text>
+    <text x="46" y="100" class="hex">#182033</text>
+    <text x="46" y="120" class="desc">Primary body</text>
+    <text x="46" y="134" class="desc">&amp; menu headings</text>
+  </g>
+</svg>

@@ -1,174 +1,144 @@
-# Vindela
+<div align="center">
 
-A full-stack culinary commerce and order management platform dedicated to pure vegetarian cuisine, featuring real-time catalog navigation, resilient cart synchronization, and an administrative order orchestration pipeline.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,26&height=220&section=header&text=Vindela%20Platform&fontSize=52&fontColor=FFFFFF&fontAlignY=36&desc=Full-Stack%20Culinary%20Commerce%20%26%20Table%20Reservation%20System&descSize=16&descColor=A5B4FC&descAlignY=58&animation=fadeIn" width="100%" />
 
-[![Frontend](https://img.shields.io/badge/Frontend-React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![Backend](https://img.shields.io/badge/Backend-Express_5-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
-[![Database](https://img.shields.io/badge/Database-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![Tooling](https://img.shields.io/badge/Build-Vite_8-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Styling](https://img.shields.io/badge/Tailwind-v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+<br/>
 
----
+<a href="#system-architecture">
+  <img src="https://img.shields.io/badge/Frontend-React%2019%20%2B%20Vite%208-10B981?style=for-the-badge&labelColor=1e1b4b" alt="React 19" />
+</a>
+&nbsp;
+<a href="#system-architecture">
+  <img src="https://img.shields.io/badge/Styling-Tailwind%20CSS%20v4-8B5CF6?style=for-the-badge&labelColor=1e1b4b" alt="Tailwind CSS v4" />
+</a>
+&nbsp;
+<a href="#system-architecture">
+  <img src="https://img.shields.io/badge/Backend-Express%205%20%2B%20Node.js-38BDF8?style=for-the-badge&labelColor=1e1b4b" alt="Express 5" />
+</a>
+&nbsp;
+<a href="#system-architecture">
+  <img src="https://img.shields.io/badge/Database-MongoDB%20%2B%20Mongoose-EC4899?style=for-the-badge&labelColor=1e1b4b" alt="MongoDB" />
+</a>
 
-## Project Overview
+</div>
 
-Vindela bridges the gap between discerning vegetarian consumers and verified vegetarian culinary kitchens. Built with a decoupled MERN architecture (React 19, Vite 8, Express 5, and MongoDB Mongoose 9), the system provides transparent ingredient sourcing, dietary tags (vegan, Jain, gluten-free), and real-time order lifecycle tracking.
+<br/>
 
-**Vision:** Provide an uncompromising, delightful dining platform that guarantees 100% vegetarian integrity with modern digital commerce convenience.
+# Vindela — Full-Stack Culinary Commerce Platform
 
----
+A modern, production-grade Restaurant Reservation and Table Capacity Management System built with React 19, Express 5, and MongoDB.
 
-## Key Features
-
-- **Specialized Vegetarian Taxonomy:** Filtering by strict culinary preferences including vegan, gluten-free, organic, and Jain preparations.
-- **Resilient Shopping Cart:** Client-persisted cart state with automatic stock validation and price verification upon checkout.
-- **Secure Authentication Pipeline:** JSON Web Token (JWT) session authorization with bcrypt password encryption and protected route middleware.
-- **Order Orchestration Workflow:** End-to-end order processing status transitions: Placed -> Confirmed -> Preparing -> Out for Delivery -> Completed.
-- **Automated Catalog Seeding:** Integrated seed scripts for generating realistic menu structures, pricing, and category hierarchies.
-- **Ultra-Fast Frontend:** Built with React 19 and Vite 8, offering instantaneous route navigation via React Router 7.
-
----
-
-## Use Cases
-
-### For Consumers & Diners
-- Explore categorized vegetarian cuisines with detailed ingredient transparency.
-- Customize items, manage multiple delivery addresses, and track real-time order status.
-
-### For Restaurant Kitchen Operators
-- Monitor live orders on an administrative dashboard with one-click status updates.
-- Toggle item availability and adjust pricing in real-time.
-
-### For Developers & System Architects
-- Reference pattern for structuring an Express 5 REST API with Mongoose 9 schemas.
-- Clean separation of concerns between authentication, business controllers, and data access objects.
+This application unifies customer-facing table reservations with an administrative operations center to oversee real-time table occupancies, bookings, and restaurant capacity.
 
 ---
 
 ## System Architecture
 
-```
-+---------------------------------------------------------------+
-|              Frontend Client (React 19 + Vite 8)              |
-|  - React Router 7 Navigation     - Tailwind CSS v4 Theme      |
-|  - Persistent Cart Store         - Toast Notifications        |
-+---------------------------------------------------------------+
-                                |  REST API (Axios / JSON)
-                                v
-+---------------------------------------------------------------+
-|               Backend Server (Node.js + Express 5)            |
-|  - JWT Auth Middleware           - Express Validator          |
-|  - Order Management Service      - Product Routing Engine     |
-+---------------------------------------------------------------+
-                                |  Mongoose 9 ODM
-                                v
-+---------------------------------------------------------------+
-|                     MongoDB Document Store                    |
-|  - Users & Roles                 - Products & Categories      |
-|  - Order Records                 - Delivery Details           |
-+---------------------------------------------------------------+
-```
+<p align="center" style="margin: 20px 0;">
+  <img src="./docs/architecture.svg" alt="Vindela Architecture Flow" width="100%" />
+</p>
+
+* **Customer / Admin**: Browser client interacting with the React 19 single-page application.
+* **React 19 Frontend**: Built with Vite 8, Tailwind CSS v4, Lucide icons, and Axios API services.
+* **Express 5 API Server**: Node.js REST gateway managing JWT authentication, role guards, and reservation validation.
+* **MongoDB Database**: Document-oriented collections (`User`, `Table`, `Reservation`) managed with Mongoose 9 schemas.
 
 ---
 
-## Technology Stack
+## Engineering Documentation
 
-| Layer | Technologies |
-|---|---|
-| Frontend Framework | React 19.2, React DOM 19.2 |
-| Build Tool | Vite 8, @vitejs/plugin-react |
-| Routing & State | React Router 7, React Context |
-| Styling | Tailwind CSS v4, Lucide React, React Hot Toast |
-| Backend Runtime | Node.js, Express 5.2 |
-| Database & ODM | MongoDB, Mongoose 9.7 |
-| Security & Auth | JSON Web Token (jsonwebtoken), bcryptjs |
-| HTTP & Utilities | Axios, date-fns, morgan, cors, dotenv |
+The project includes a complete production-grade architecture and development documentation suite:
 
----
-
-## Project Structure
-
-```
-Vindela/
-├── frontend/             # React 19 client application
-│   ├── src/
-│   │   ├── components/   # Navbar, CartDrawer, FoodCard, Footer
-│   │   ├── pages/        # Home, Menu, OrderTracking, Checkout, Login
-│   │   ├── context/      # AuthContext and CartContext providers
-│   │   └── App.jsx       # Root router configuration
-│   ├── package.json
-│   └── vite.config.js
-├── backend/              # Express 5 REST API
-│   ├── src/
-│   │   ├── controllers/  # authController, productController, orderController
-│   │   ├── models/       # User.js, Product.js, Order.js (Mongoose)
-│   │   ├── routes/       # authRoutes.js, productRoutes.js, orderRoutes.js
-│   │   ├── middleware/   # authMiddleware.js, errorHandler.js
-│   │   └── seed/         # seed.js (pre-populated vegetarian database)
-│   ├── server.js         # Server bootstrap and database connection
-│   └── package.json
-└── README.md
-```
+| Document | Purpose |
+| :-- | :-- |
+| [**`docs/PRD.md`**](./docs/PRD.md) | Product Requirements Document: MVP specifications, target personas & success metrics |
+| [**`docs/ARCHITECTURE.md`**](./docs/ARCHITECTURE.md) | System topology, availability engine logic, directory tree & ADRs |
+| [**`docs/RULES.md`**](./docs/RULES.md) | Engineering standards, React 19/Express conventions, and booking integrity rules |
+| [**`docs/DESIGN.md`**](./docs/DESIGN.md) | Design system, UI tokens, Inter & JetBrains Mono typography, and telemetry cards |
+| [**`docs/TASKS.md`**](./docs/TASKS.md) | Phased roadmap tracking 24 engineering deliverables with priority & status badges |
+| [**`docs/MEMORY.md`**](./docs/MEMORY.md) | Active session memory, completed milestone log, and operational boundaries |
 
 ---
 
-## Getting Started
+## Setup Instructions
 
 ### Prerequisites
-- Node.js >= 18.0.0
-- MongoDB instance (local or MongoDB Atlas connection URI)
+- Node.js (`v18+`)
+- MongoDB (Atlas or Local instance)
 
-### Backend Setup
+### 1. Clone the repository
+```bash
+git clone https://github.com/abhishek4643/Vindela.git
+cd Vindela
+```
 
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   npm install
-   ```
+### 2. Backend Setup
+```bash
+cd backend
+npm install
+```
+Create a `.env` file in the `backend` directory with the following variables:
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRE=7d
+NODE_ENV=development
+FRONTEND_URL=http://localhost:5173
+```
+Run the database seed script to populate tables and create the default admin user:
+```bash
+npm run seed
+```
+Start the backend server:
+```bash
+npm run dev
+```
 
-2. Create a `.env` file in `backend/`:
-   ```env
-   PORT=5000
-   MONGO_URI=mongodb://localhost:27017/vindela
-   JWT_SECRET=your_jwt_secret_key_here
-   ```
+### 3. Frontend Setup
+Open a new terminal window:
+```bash
+cd frontend
+npm install
+```
+Start the frontend development server:
+```bash
+npm run dev
+```
 
-3. Seed the database with menu items:
-   ```bash
-   npm run seed
-   ```
-
-4. Start the backend server:
-   ```bash
-   npm run dev
-   ```
-
-### Frontend Setup
-
-1. Open a new terminal and navigate to `frontend/`:
-   ```bash
-   cd frontend
-   npm install
-   ```
-
-2. Launch the frontend development server:
-   ```bash
-   npm run dev
-   ```
-
-3. Access the application in your browser at `http://localhost:5173`
+### 4. Default Credentials
+- **Admin**: `admin@restaurant.com` / `Admin@123`
+- **Customer**: Register a new account on the login page.
 
 ---
 
-## Future Roadmap
+## Reservation & Availability Logic
 
-- Integration with payment gateways (Stripe / Razorpay).
-- Geolocation-based delivery tracking with live driver mapping.
-- Kitchen Display System (KDS) interface with audio order notifications.
-- Customer review and dietary rating system.
+The core availability engine ensures that overlapping reservations and capacity conflicts are mathematically impossible.
+
+**Logic Flow:**
+1. **Capacity Filtering**: When a customer searches for a date and guest count, the backend filters tables where `table.capacity >= guestCount`.
+2. **Conflict Checking**: For matching tables, the system queries the `Reservation` collection for existing `confirmed` or `pending` bookings on that date.
+3. **Slot Availability**: Maps over fixed 2-hour slots (`VALID_TIME_SLOTS`) and removes slots that already have a booking for that specific table.
+4. **Validation**: During checkout, an atomic pre-save double-check prevents concurrent booking race conditions.
+
+---
+
+## Role-Based Access Control (User vs Admin)
+
+The system uses JWT (JSON Web Tokens) for authentication and a robust middleware architecture for authorization:
+
+- **Customer (User)**: 
+  - Routes: `/dashboard`, `/reserve`.
+  - Can view their own reservations (filtered via `req.user.id`).
+  - Can cancel their own reservations within policy windows.
+- **Administrator (Admin)**: 
+  - Routes: `/admin`, `/admin/reservations`, `/admin/tables`.
+  - Protected via `authorize('admin')` middleware.
+  - Can view all reservations, update statuses (`Confirm`, `Complete`, `Cancel`), and manage active table inventory.
 
 ---
 
 ## License
 
-This project is licensed under the ISC License.
+This project is open-source and available under the MIT License.

@@ -1,0 +1,93 @@
+<svg width="100%" height="100%" viewBox="0 0 960 170" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; font-weight: 700; text-anchor: middle; }
+      .subtitle { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 500; text-anchor: middle; }
+      .protocol { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 10px; font-weight: 600; fill: #94A3B8; text-anchor: middle; letter-spacing: 0.05em; }
+    </style>
+    <marker id="arrow-left" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 8 2 L 2 5 L 8 8" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-right" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 2 2 L 8 5 L 2 8" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Container Canvas -->
+  <rect width="960" height="170" rx="14" fill="#0B0F19" stroke="#1E293B" stroke-width="1" />
+
+  <!-- 1. Customer / Admin Card -->
+  <g transform="translate(24, 25)">
+    <rect width="180" height="120" rx="12" fill="#BFDBFE" filter="url(#card-shadow)" />
+    <!-- User / Client Icon -->
+    <g transform="translate(76, 16)" stroke="#1E3A8A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </g>
+    <text x="90" y="78" class="title" fill="#1E3A8A">Customer / Admin</text>
+    <text x="90" y="98" class="subtitle" fill="#1E40AF">(Web Browser / SPA)</text>
+  </g>
+
+  <!-- Arrow 1 (Client <-> React 19 Frontend) -->
+  <g transform="translate(204, 85)">
+    <text x="25" y="-12" class="protocol">HTTPS / DOM</text>
+    <line x1="6" y1="0" x2="44" y2="0" stroke="#CBD5E1" stroke-width="1.8" marker-start="url(#arrow-left)" marker-end="url(#arrow-right)" />
+  </g>
+
+  <!-- 2. React 19 SPA Card -->
+  <g transform="translate(254, 25)">
+    <rect width="185" height="120" rx="12" fill="#A7F3D0" filter="url(#card-shadow)" />
+    <!-- React / Window Icon -->
+    <g transform="translate(78, 16)" stroke="#065F46" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="3" width="24" height="16" rx="2" ry="2" />
+      <line x1="2" y1="8" x2="26" y2="8" />
+      <circle cx="6" cy="5.5" r="0.75" />
+      <circle cx="9" cy="5.5" r="0.75" />
+      <circle cx="12" cy="5.5" r="0.75" />
+    </g>
+    <text x="92" y="78" class="title" fill="#065F46">React 19 Frontend</text>
+    <text x="92" y="98" class="subtitle" fill="#047857">(Vite 8 / Tailwind v4)</text>
+  </g>
+
+  <!-- Arrow 2 (Frontend <-> Express API) -->
+  <g transform="translate(439, 85)">
+    <text x="23" y="-12" class="protocol">REST / JWT</text>
+    <line x1="6" y1="0" x2="40" y2="0" stroke="#CBD5E1" stroke-width="1.8" marker-start="url(#arrow-left)" marker-end="url(#arrow-right)" />
+  </g>
+
+  <!-- 3. Express 5 API Gateway Card -->
+  <g transform="translate(485, 25)">
+    <rect width="210" height="120" rx="12" fill="#FDE68A" filter="url(#card-shadow)" />
+    <!-- Server / Gateway Icon -->
+    <g transform="translate(91, 16)" stroke="#78350F" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="24" height="8" rx="2" />
+      <rect x="2" y="14" width="24" height="8" rx="2" />
+      <line x1="6" y1="6" x2="6.01" y2="6" />
+      <line x1="6" y1="18" x2="6.01" y2="18" />
+    </g>
+    <text x="105" y="78" class="title" fill="#78350F">Express 5 API Server</text>
+    <text x="105" y="98" class="subtitle" fill="#92400E">(Node.js / JWT Auth)</text>
+  </g>
+
+  <!-- Arrow 3 (API <-> MongoDB Database) -->
+  <g transform="translate(695, 85)">
+    <text x="23" y="-12" class="protocol">Mongoose</text>
+    <line x1="6" y1="0" x2="40" y2="0" stroke="#CBD5E1" stroke-width="1.8" marker-start="url(#arrow-left)" marker-end="url(#arrow-right)" />
+  </g>
+
+  <!-- 4. MongoDB Database Card -->
+  <g transform="translate(741, 25)">
+    <rect width="195" height="120" rx="12" fill="#FBCFE8" filter="url(#card-shadow)" />
+    <!-- Database / Storage Icon -->
+    <g transform="translate(83, 16)" stroke="#831843" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="14" cy="5" rx="10" ry="3.5" />
+      <path d="M4 5v7c0 1.93 4.48 3.5 10 3.5s10-1.57 10-3.5V5" />
+      <path d="M4 12v7c0 1.93 4.48 3.5 10 3.5s10-1.57 10-3.5v-7" />
+    </g>
+    <text x="97" y="78" class="title" fill="#831843">MongoDB Database</text>
+    <text x="97" y="98" class="subtitle" fill="#9D174D">(Tables &amp; Bookings)</text>
+  </g>
+</svg>

@@ -17,6 +17,11 @@ Vindela follows a decoupled client-server architecture connecting a high-perform
   <img src="./architecture.svg" alt="Vindela Architecture Flow" width="100%" />
 </p>
 
+* **Customer / Admin**: Browser client interacting with the React 19 single-page application.
+* **React 19 Frontend**: Built with Vite 8, Tailwind CSS v4, Lucide icons, and Axios API services.
+* **Express 5 API Server**: Node.js REST gateway managing JWT authentication, role guards, and reservation validation.
+* **MongoDB Database**: Document persistence for menus, reservations, tables, user roles, and order records.
+
 ---
 
 ### 2. Technology Stack
